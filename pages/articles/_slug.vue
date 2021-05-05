@@ -1,13 +1,16 @@
+/* eslint-disable vue/no-multiple-template-root */
 <template>
-  <article class="is-dark">
-    <div class="hero-body is-brack">
-      <h1 class="title">
-        {{ articles.title }}
-      </h1>
-      <p class="subtitle">
-        {{ articles.description }} / {{ articles.date }}
-      </p>
-    </div>
+  <article class="has-background-dark has-text-white">
+    <section class="hero is-black">
+      <div class="hero-body">
+        <h1 class="title">
+          {{ articles.title }}
+        </h1>
+        <p class="subtitle">
+          {{ articles.description }} / {{ articles.date }}
+        </p>
+      </div>
+    </section>
     <nuxt-content :document="articles" />
   </article>
 </template>

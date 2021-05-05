@@ -2,7 +2,10 @@
   <div>
     <div v-for="a in articles" :key="a.slug">
       <nuxt-link :to="'/articles/'+ a.slug">
-        {{ a.title }} / {{ a.date }}
+        <h1 class="title">
+          {{ a.title }}
+        </h1>
+        {{ a.date }}
       </nuxt-link>
     </div>
   </div>
