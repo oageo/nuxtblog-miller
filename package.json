@@ -1,7 +1,8 @@
 {
   "name": "nuxtblog-miller",
+  "author": "Osumi Akari",
   "version": "0.0.1",
-  "private": true,
+  "private": "true",
   "license": "MIT",
   "scripts": {
     "dev": "nuxt",

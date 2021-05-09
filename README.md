@@ -1,20 +1,26 @@
 # nuxtblog-miller
+![GitHub](https://img.shields.io/github/license/Osumi-Akari/nuxtblog-miller)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Osumi-Akari/nuxtblog-miller)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Osumi-Akari/nuxtblog-miller)
+
+
+Simple blog made with nuxt & bulma
 
 ## Build Setup
 
+### 事前準備
+1. インターネット環境
+2. [Git](https://git-scm.com/)
+3. [nodejs](https://nodejs.org/)
+4. （任意）[yarn](https://yarnpkg.com/)
+
+### コマンドを実行
 ```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
+git clone https://github.com/Osumi-Akari/nuxtblog-miller.git
+cd nuxt-miller
+yarn install
+yarn generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+distフォルダが生成されたことを確認
+
