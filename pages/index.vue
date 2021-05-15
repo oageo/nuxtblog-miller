@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="a in articles" :key="a.slug">
+    <div v-for="a in articles" :key="a.slug" class="m-4">
       <nuxt-link :to="'/articles/'+ a.slug">
         <h1 class="title">
           {{ a.title }}

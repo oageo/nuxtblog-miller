@@ -1,12 +1,18 @@
 /* eslint-disable vue/no-multiple-template-root */
 <template>
-  <h1 class="title is-centered">
-    Error code: {{ error.statusCode }} / Message: {{ error.message }}
-  </h1>
+  <div class="m-4">
+    <h1 class="title">
+      Error code: {{ error.statusCode }}
+    </h1>
+    <p class="subtitle">
+      Message: {{ error.message }}
+    </p>
+  </div>
 </template>
 
 <script>
 export default {
+  layout: 'error',
   // eslint-disable-next-line vue/require-prop-types
   props: ['error']
 }

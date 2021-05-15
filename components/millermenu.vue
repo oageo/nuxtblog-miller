@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar is-black" role="navigation">
+  <nav class="navbar is-black has-text-white" role="navigation">
     <div class="navbar-brand">
-      <nuxt-link to="/">
+      <nuxt-link class="has-text-white" to="/">
         nuxtblog-miller
       </nuxt-link>
     </div>

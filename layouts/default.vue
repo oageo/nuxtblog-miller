@@ -1,6 +1,8 @@
 <template>
   <div>
+    <millermenu />
     <Nuxt />
+    <millerfooter />
   </div>
 </template>
 

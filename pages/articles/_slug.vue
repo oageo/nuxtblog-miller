@@ -11,7 +11,11 @@
         </p>
       </div>
     </section>
-    <nuxt-content :document="articles" />
+    <main class="columns">
+      <div class="column is-8">
+        <nuxt-content :document="articles" />
+      </div>
+    </main>
   </article>
 </template>
 
