@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="a in articles" :key="a.slug" class="m-4">
+    <div v-for="a in articles" :key="a.date" class="m-4">
       <nuxt-link :to="'/articles/'+ a.slug">
         <h1 class="title">
           {{ a.title }}
@@ -17,6 +17,11 @@ export default {
     const query = await $content('articles' || 'index').limit(10)
     const articles = await query.fetch()
     return { articles }
+  },
+  computed: {
+    reverseItems () {
+      return this.articles.slice().reverse()
+    }
   }
 }
 </script>
