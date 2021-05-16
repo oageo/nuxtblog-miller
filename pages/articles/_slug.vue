@@ -12,7 +12,7 @@
       </div>
     </section>
     <main class="columns">
-      <div class="column is-8">
+      <div class="column is-8 m-4">
         <nuxt-content :document="articles" />
       </div>
     </main>
