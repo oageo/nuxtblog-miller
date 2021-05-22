@@ -6,5 +6,5 @@
 </template>
 
 <style>
-@import "node_modules\bulma\css\bulma.css";
+@import "node_modules\bulma\css\bulma.min.css";
 </style>
