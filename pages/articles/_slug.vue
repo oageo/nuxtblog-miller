@@ -28,6 +28,10 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import "node_modules\bulma\css\bulma.min.css";
+
+.nuxt-content h2{
+  font-size: 2rem;
+}
 </style>
