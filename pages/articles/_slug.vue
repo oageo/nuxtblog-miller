@@ -11,9 +11,19 @@
         </p>
       </div>
     </section>
-    <main class="columns">
+    <main class="columns flex-wrap">
       <div class="column is-8 m-4">
         <nuxt-content :document="articles" />
+      </div>
+      <div class="column is-4 m-4">
+        <div class="box">
+          <p class="is-centered">
+            Writer
+          </p>
+          <p class="is-centered subtitle is-4">
+            {{ articles.author }}
+          </p>
+        </div>
       </div>
     </main>
   </article>
