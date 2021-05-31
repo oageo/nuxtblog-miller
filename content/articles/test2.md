@@ -8,10 +8,10 @@ author: Osumi Akari
 This is Second Test page!
 
 ## Image Test
-![PNG](../iMG.png)
+![PNG](~/assets/iMG.png)
 
 This is PNG image.
 
-![SVG](../iMG.svg)
+![SVG](~/assets/iMG.svg)
 
 This is SVG image.
