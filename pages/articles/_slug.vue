@@ -20,8 +20,16 @@
           <p class="is-centered">
             Writer
           </p>
-          <p class="is-centered subtitle is-4">
+          <p class="has-text-centered subtitle is-4">
             {{ articles.author }}
+          </p>
+        </div>
+        <div class="box">
+          <p>
+            Created: {{ articles.createdAt }}
+          </p>
+          <p>
+            Last Updated: {{ articles.updatedAt }}
           </p>
         </div>
       </div>
