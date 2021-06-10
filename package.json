@@ -23,6 +23,7 @@
     "core-js": "^3.9.1",
     "nuxt": "^2.2.0",
     "nuxt-purgecss": "^1.0.0",
+    "rehype-add-classes": "^1.0.0",
     "remark-external-links": "^8.0.0"
   },
   "devDependencies": {
