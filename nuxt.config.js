@@ -56,7 +56,13 @@ export default {
     markdown: {
       remarkExternalLinks: {
         target: '_self'
-      }
+      },
+      remarkPlugins: [
+        'remark-math'
+      ],
+      rehypePlugins: [
+        'rehype-mathjax'
+      ]
     }
   },
 
