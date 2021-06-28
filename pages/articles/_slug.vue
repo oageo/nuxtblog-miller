@@ -52,6 +52,11 @@ export default {
           content: this.articles.description
         },
         {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.articles.description
+        },
+        {
           hid: 'og:title',
           property: 'og:title',
           content: this.articles.title
