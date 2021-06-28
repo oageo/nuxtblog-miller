@@ -42,6 +42,12 @@ export default {
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     return { articles }
+  },
+  head () {
+    return {
+      title: this.articles.title,
+      titleTemplate: '%s'
+    }
   }
 }
 </script>
