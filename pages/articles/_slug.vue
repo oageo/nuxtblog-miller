@@ -45,6 +45,18 @@ export default {
   },
   head () {
     return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.articles.description
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.articles.title
+        }
+      ],
       title: this.articles.title,
       titleTemplate: '%s'
     }

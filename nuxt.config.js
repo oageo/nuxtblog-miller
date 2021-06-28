@@ -33,7 +33,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@aceforth/nuxt-optimized-images'
+    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/pwa'
   ],
   optimizedImages: {
     optimizeImages: true
@@ -64,6 +65,10 @@ export default {
         'rehype-mathjax'
       ]
     }
+  },
+
+  pwa: {
+    icon: false
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
