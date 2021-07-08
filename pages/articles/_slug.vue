@@ -11,11 +11,11 @@
         </p>
       </div>
     </section>
-    <main class="columns flex-wrap">
+    <main class="columns is-centered flex-wrap">
       <div class="column is-8 m-4">
         <nuxt-content :document="articles" />
       </div>
-      <div class="column is-4 m-4">
+      <div class="column is-3 m-2">
         <div class="box">
           <p class="is-centered">
             Writer
