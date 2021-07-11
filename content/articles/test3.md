@@ -6,3 +6,5 @@ author: Osumi Akari
 ---
 
 このページは三番目のテストページです。
+
+[Test1](test1) / [Test2](test2)
