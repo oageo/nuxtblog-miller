@@ -12,7 +12,7 @@
       </div>
     </section>
     <main class="columns is-centered flex-wrap">
-      <div class="column is-8 m-4">
+      <div class="content column is-8 m-4">
         <nuxt-content :document="articles" />
       </div>
       <div class="column is-3 m-2">
