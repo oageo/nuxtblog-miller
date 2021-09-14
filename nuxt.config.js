@@ -33,6 +33,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    'nuxt-compress',
     '@aceforth/nuxt-optimized-images',
     '@nuxtjs/pwa'
   ],
