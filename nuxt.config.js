@@ -47,7 +47,15 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    'nuxt-purgecss'
+    'nuxt-purgecss',
+    'nuxt-compress', {
+      gzip: {
+        threshold: 8192
+      },
+      brotli: {
+        threshold: 8192
+      }
+    }
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
