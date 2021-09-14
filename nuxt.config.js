@@ -33,7 +33,6 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    'nuxt-compress',
     '@aceforth/nuxt-optimized-images',
     '@nuxtjs/pwa'
   ],
@@ -47,15 +46,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-    'nuxt-purgecss',
-    'nuxt-compress', {
-      gzip: {
-        threshold: 8192
-      },
-      brotli: {
-        threshold: 8192
-      }
-    }
+    'nuxt-purgecss'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
