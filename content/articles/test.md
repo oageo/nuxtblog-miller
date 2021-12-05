@@ -3,6 +3,7 @@ title: Test title
 description: Test description
 date: 2021-05-04
 author: Osumi Akari
+category: [examplecategory1]
 ---
 
 ## Test h2
