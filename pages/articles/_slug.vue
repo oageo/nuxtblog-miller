@@ -14,6 +14,24 @@
     <main class="columns is-centered flex-wrap">
       <div class="content column is-8 m-4">
         <nuxt-content :document="articles" />
+        <div class="columns box">
+          <div v-if="prev" class="column">
+            <p>
+              前の記事
+            </p>
+            <nuxt-link :to="`/articles/${prev.slug}/`" class="page-nav__link">
+              {{ prev.title }}
+            </nuxt-link>
+          </div>
+          <div v-if="next" class="column">
+            <p>
+              次の記事
+            </p>
+            <nuxt-link :to="`/articles/${next.slug}/`" class="page-nav__link">
+              {{ next.title }}
+            </nuxt-link>
+          </div>
+        </div>
       </div>
       <div class="column is-3 m-2">
         <div class="box">
@@ -41,7 +59,9 @@
 export default {
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
-    return { articles }
+    const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('published', 'asc').surround(params.slug).fetch()
+    // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
+    return { articles, prev, next }
   },
   head () {
     return {

@@ -76,5 +76,9 @@ export default {
     extractCSS: {
       ignoreOrder: true
     }
+  },
+
+  render: {
+    injectScripts: false
   }
 }
