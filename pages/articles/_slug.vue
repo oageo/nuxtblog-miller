@@ -12,9 +12,11 @@
       </div>
     </section>
     <main class="columns is-centered flex-wrap">
-      <div class="content column is-8 m-4">
-        <nuxt-content :document="articles" />
-        <div class="columns box">
+      <div class="column is-8 m-4">
+        <div class="content">
+          <nuxt-content :document="articles" />
+        </div>
+        <section class="columns box">
           <div v-if="prev" class="column">
             <p>
               前の記事
@@ -31,7 +33,7 @@
               {{ next.title }}
             </nuxt-link>
           </div>
-        </div>
+        </section>
       </div>
       <div class="column is-3 m-2">
         <div class="box">
@@ -95,4 +97,5 @@ export default {
 .nuxt-content h2{
   font-size: 2rem;
 }
+
 </style>
