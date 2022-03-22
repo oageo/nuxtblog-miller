@@ -58,13 +58,7 @@
 </template>
 
 <script>
-import millermedia from './millermedia.vue'
-
 export default {
-  components: {
-    // eslint-disable-next-line vue/no-unused-components
-    millermedia
-  },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('published', 'asc').surround(params.slug).fetch()
