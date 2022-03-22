@@ -26,15 +26,16 @@
 </template>
 
 <script>
-import { plyr } from 'plyr'
-const player = new plyr('.player')
+import { Plyr } from 'plyr'
+const player = new Plyr('.player')
+let vsource, asource, ytvid, vimeovid
 
 export default ({
   props: [
-    'vsource',
-    'asource',
-    'ytvid',
-    'vimeovid'
+    vsource: String,
+    asource: String,
+    ytvid: String,
+    vimeovid: String
   ]
 })
 </script>
