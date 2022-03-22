@@ -24,6 +24,7 @@
     "core-js": "^3.9.1",
     "nuxt": "^2.2.0",
     "nuxt-purgecss": "^0.2.1",
+    "plyr": "^3.6.12",
     "rehype-add-classes": "^1.0.0",
     "rehype-mathjax": "^3.1.0",
     "remark-external-links": "^8.0.0",
