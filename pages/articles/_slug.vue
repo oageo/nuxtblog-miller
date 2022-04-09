@@ -65,6 +65,11 @@ export default {
     // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
     return { articles, prev, next }
   },
+  data (){
+    return {
+      ytvid
+    }
+  },
   head () {
     return {
       meta: [
@@ -87,6 +92,9 @@ export default {
       title: this.articles.title,
       titleTemplate: '%s'
     }
+  },
+  component: {
+    milleryt: milleryt
   }
 }
 </script>
