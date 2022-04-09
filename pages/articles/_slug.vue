@@ -1,4 +1,3 @@
-/* eslint-disable vue/no-multiple-template-root */
 <template>
   <article class="has-background-dark has-text-white">
     <section class="hero is-black">
@@ -58,6 +57,8 @@
 </template>
 
 <script>
+let ytvid
+let milleryt
 export default {
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
@@ -65,7 +66,10 @@ export default {
     // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
     return { articles, prev, next }
   },
-  data (){
+  component: {
+    milleryt
+  },
+  data () {
     return {
       ytvid
     }
@@ -92,9 +96,6 @@ export default {
       title: this.articles.title,
       titleTemplate: '%s'
     }
-  },
-  component: {
-    milleryt: milleryt
   }
 }
 </script>
