@@ -1,6 +1,6 @@
 <template>
-  <div class="videoyt">
-      <iframe :src="'https://youtube-nocookie.com/embed/' + ytvid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading=lazy>
+  <div class="videoyt milleryt">
+      <iframe :src="'https://youtube.com/embed/' + ytvid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading=lazy>
         milleryt.vue: something broken
       </iframe>
   </div>
