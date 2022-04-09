@@ -26,9 +26,6 @@ export default {
     reverseItems () {
       return this.articles.slice().reverse()
     }
-  },
-  component: {
-    milleryt: milleryt
   }
 }
 </script>

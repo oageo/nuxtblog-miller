@@ -1,6 +1,6 @@
 <template>
   <div class="videoyt">
-      <iframe :src="'https://youtube-nocookie.com/embed/' + ytid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading=lazy allowfullscreen>
+      <iframe :src="'https://youtube-nocookie.com/embed/' + ytvid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading=lazy>
         milleryt.vue: something broken
       </iframe>
   </div>
@@ -11,7 +11,8 @@
 </style>
 
 <script>
+let ytvid
 export default {
-    props: [ytvid]
+  props: [ytvid]
 }
 </script>
