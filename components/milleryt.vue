@@ -1,5 +1,5 @@
 <template>
-  <div class="block videoyt milleryt">
+  <div loading="lazy" class="lazy block is-centered videoyt milleryt">
     <iframe :src="'https://youtube.com/embed/' + ytvid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy">
       <div class="milleryterror">
       <p>
