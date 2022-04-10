@@ -1,27 +1,32 @@
 <template>
-  <div class="videoyt milleryt">
+  <div class="block videoyt milleryt">
     <iframe :src="'https://youtube.com/embed/' + ytvid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy">
-      <div>
-        <p>
-          milleryt.vue: something broken.
-        </p>
-        <ul>
-          <li>
-            ytvid: {{ ytvid }}
-          </li>
-          <li>
-            Please access to <a :href="'https://www.youtube.com/watch?=' + ytvid">youtube.com</a>
-          </li>
-        </ul>
+      <div class="milleryterror">
+      <p>
+      milleryt.vue: something broken.
+      </p>
+      <ul>
+      <li>
+      ytvid: {{ ytvid }}
+      </li>
+      <li>
+      Please access to <a :href="'https://www.youtube.com/watch?=' + ytvid">youtube.com</a>
+      </li>
+      </ul>
       </div>
     </iframe>
+    <p>Direct link of <a :href="'https://www.youtube.com/watch?=' + ytvid">this video on YouTube</a></p>
   </div>
 </template>
 
 <script>
-let ytvid
 export default {
-  props: [ytvid]
+  props: {
+    ytvid: {
+      type: String,
+      required: true
+    }
+  }
 }
 </script>
 
