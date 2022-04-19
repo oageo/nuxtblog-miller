@@ -96,9 +96,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .nuxt-content h2{
-  font-size: 2rem;
+  color: #ffffff;
 }
 
 </style>
