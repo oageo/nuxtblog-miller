@@ -100,5 +100,7 @@ export default {
 .nuxt-content h2{
   color: #ffffff;
 }
-
+.nuxt-content img{
+  max-width: 100%;
+}
 </style>
