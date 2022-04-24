@@ -51,6 +51,14 @@
             Last Updated: {{ articles.updatedAt }}
           </p>
         </div>
+        <div class="box">
+          <p>
+            Category
+          </p>
+          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'tag-'+index" :to="'/tag/'+t">
+            
+          </nuxt-link>
+        </div>
       </div>
     </main>
   </article>
