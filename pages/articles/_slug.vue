@@ -75,7 +75,8 @@ export default {
   },
   data () {
     return {
-      ytvid
+      ytvid,
+      license
     }
   },
   head () {
