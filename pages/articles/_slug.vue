@@ -107,7 +107,7 @@ export default {
 </script>
 
 <style>
-.nuxt-content h2, strong{
+.nuxt-content h2, h3, h4, h5, h6, strong{
   color: #ffffff;
 }
 .nuxt-content img{
