@@ -13,7 +13,7 @@ export default {
 
         const content = await $content({ deep: true })
         .only(['title','description','thumbnail','path','category','tag','updatedAt','series','index'])
-        .sortBy('createdAt', 'desc')
+        .sortBy('date', 'desc')
         .where({category:{ $contains:params.slug}})
         .skip(0).limit(store.state.indexPerPage)
         .fetch();
