@@ -51,6 +51,14 @@
             Last Updated: {{ articles.updatedAt }}
           </p>
         </div>
+        <div class="box">
+          <p>
+            Category
+          </p>
+          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'tag-'+index" :to="'/tag/'+t">
+            
+          </nuxt-link>
+        </div>
       </div>
     </main>
   </article>
@@ -58,16 +66,18 @@
 
 <script>
 let ytvid
+let license
 export default {
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
-    const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('published', 'asc').surround(params.slug).fetch()
+    const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
     // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
     return { articles, prev, next }
   },
   data () {
     return {
-      ytvid
+      ytvid,
+      license
     }
   },
   head () {
@@ -97,7 +107,7 @@ export default {
 </script>
 
 <style>
-.nuxt-content h2{
+.nuxt-content h2, strong{
   color: #ffffff;
 }
 .nuxt-content img{
