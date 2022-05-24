@@ -66,6 +66,7 @@
 
 <script>
 let ytvid
+let license
 export default {
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()

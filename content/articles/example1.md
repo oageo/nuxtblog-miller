@@ -4,6 +4,7 @@ description: 冗談抜きでやるべきではない
 date: 2022-01-23
 author: Osumi Akari
 category: [examplecategory1]
+license: ccbysa40
 ---
 
 人類の150%がパソコンを使うといわれるAI時代（私調べ）。DXという単語も色々な場所で意味もなく飛び回っています。
