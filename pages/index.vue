@@ -18,7 +18,7 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    const query = await $content('articles' || 'index').sortBy('createdAt', 'desc').limit(10)
+    const query = await $content('articles' || 'index').sortBy('date', 'desc').limit(10)
     const articles = await query.fetch()
     return { articles }
   },
