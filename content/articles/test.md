@@ -17,7 +17,7 @@ This is test page!
 
 この文章な比較的長い文章です。どこで改行が行われるかを確認するために存在します。デフォルトでは大きい画面ですと画面の3分の2ほど行った場所で改行されること（Bulma class: is-8）となっています。
 
-[Test2 link](test2) / [Test3 link](test3) / [External link](https://github.com/Osumi-Akari/nuxtblog-miller)
+[Test2 link](./test2) / [Test3 link](./test3) / [External link](https://github.com/Osumi-Akari/nuxtblog-miller)
 
 ## Code block
 ```cpp
