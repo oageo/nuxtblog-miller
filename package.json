@@ -23,7 +23,6 @@
     "bulma": "^0.9.4",
     "core-js": "^3.22.1",
     "nuxt": "^2.15.8",
-    "nuxt-purgecss": "^1.0.0",
     "rehype-add-classes": "^1.0.0",
     "rehype-mathjax": "^4.0.2",
     "remark-external-links": "^9.0.1",
