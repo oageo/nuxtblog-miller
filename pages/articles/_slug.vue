@@ -55,9 +55,12 @@
           <p>
             Category
           </p>
-          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'tag-'+index" :to="'/tag/'+t">
+          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'category-'+index" :to="'/category/'+t">
             
           </nuxt-link>
+        </div>
+        <div v-if="articles.license !== ''">
+          <millerlicense :license="articles.license"></millerlicense>
         </div>
       </div>
     </main>
@@ -65,9 +68,11 @@
 </template>
 
 <script>
+import millerlicense from '~/components/millerlicense.vue'
 let ytvid
 let license
 export default {
+  components: { millerlicense },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
@@ -107,7 +112,7 @@ export default {
 </script>
 
 <style>
-.nuxt-content h2, h3, h4, h5, h6, strong{
+.nuxt-content h2, .nuxt-content h3, .nuxt-content h4, .nuxt-content h5, .nuxt-content h6, .nuxt-content strong{
   color: #ffffff;
 }
 .nuxt-content img{
