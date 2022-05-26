@@ -115,6 +115,9 @@ export default {
 .nuxt-content h2, .nuxt-content h3, .nuxt-content h4, .nuxt-content h5, .nuxt-content h6, .nuxt-content strong{
   color: #ffffff;
 }
+.nuxt-content a:hover {
+  color: hsl(219, 70%, 96%)
+}
 .nuxt-content img{
   max-width: 100%;
 }
