@@ -1,6 +1,6 @@
 <template>
   <div loading="lazy" class="lazy block is-centered videoyt milleryt">
-    <iframe :src="'https://youtube.com/embed/' + ytvid" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy">
+    <iframe :src="'https://youtube.com/embed/' + ytvid" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
       <div class="milleryterror">
       <p>
       milleryt.vue: something broken.
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style>
-@import url(https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css);
+
 </style>

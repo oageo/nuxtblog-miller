@@ -51,23 +51,38 @@
             Last Updated: {{ articles.updatedAt }}
           </p>
         </div>
+        <div class="box">
+          <p>
+            Category
+          </p>
+          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'category-'+index" :to="'/category/'+t">
+            
+          </nuxt-link>
+        </div>
+        <div v-if="articles.license !== ''">
+          <millerlicense :license="articles.license"></millerlicense>
+        </div>
       </div>
     </main>
   </article>
 </template>
 
 <script>
+import millerlicense from '~/components/millerlicense.vue'
 let ytvid
+let license
 export default {
+  components: { millerlicense },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
-    const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('published', 'asc').surround(params.slug).fetch()
+    const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
     // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
     return { articles, prev, next }
   },
   data () {
     return {
-      ytvid
+      ytvid,
+      license
     }
   },
   head () {
@@ -96,11 +111,14 @@ export default {
 }
 </script>
 
-<style scoped>
-@import url(https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css);
-
-.nuxt-content h2{
-  font-size: 2rem;
+<style>
+.nuxt-content h2, .nuxt-content h3, .nuxt-content h4, .nuxt-content h5, .nuxt-content h6, .nuxt-content strong{
+  color: #ffffff;
 }
-
+.nuxt-content a:hover {
+  color: hsl(219, 70%, 96%)
+}
+.nuxt-content img{
+  max-width: 100%;
+}
 </style>
