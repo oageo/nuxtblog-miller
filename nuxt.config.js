@@ -35,6 +35,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     '@aceforth/nuxt-optimized-images',
+    'nuxt-purgecss',
     '@nuxtjs/pwa'
   ],
   optimizedImages: {
@@ -47,7 +48,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content'
-    //'nuxt-purgecss'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

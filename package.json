@@ -45,6 +45,7 @@
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
     "jest": "^26.6.3",
+    "nuxt-purgecss": "^1.0.0",
     "responsive-loader": "^2.3.0",
     "sass": "^1.52.1",
     "sass-loader": "^10.1.1",
