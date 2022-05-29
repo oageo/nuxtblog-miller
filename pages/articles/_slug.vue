@@ -56,7 +56,7 @@
             Category
           </p>
           <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'category-'+index" :to="'/category/'+t">
-            {{ articles.category.slug }}
+            {{ t.text }}
           </nuxt-link>
         </div>
         <div v-if="articles.license !== ''">
@@ -83,6 +83,11 @@ export default {
     return {
       ytvid,
       license
+    }
+  },
+  computed: {
+    category () {
+      return this.$store.state.category
     }
   },
   head () {
