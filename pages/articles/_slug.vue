@@ -56,7 +56,7 @@
             Category
           </p>
           <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'category-'+index" :to="'/category/'+t">
-            {{ articles.category }}
+            {{ articles.category.slug }}
           </nuxt-link>
         </div>
         <div v-if="articles.license !== ''">
