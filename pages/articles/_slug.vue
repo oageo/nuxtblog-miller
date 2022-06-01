@@ -55,12 +55,12 @@
           <p>
             Category
           </p>
-          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'category-'+index" :to="'/category/'+t">
+          <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t">
             {{ t.text }}
           </nuxt-link>
         </div>
         <div v-if="articles.license !== ''">
-          <millerlicense :license="articles.license"></millerlicense>
+          <millerlicense :license="articles.license" />
         </div>
       </div>
     </main>
@@ -85,11 +85,6 @@ export default {
       license
     }
   },
-  computed: {
-    category () {
-      return this.$store.state.category
-    }
-  },
   head () {
     return {
       meta: [
@@ -111,6 +106,11 @@ export default {
       ],
       title: this.articles.title,
       titleTemplate: '%s'
+    }
+  },
+  computed: {
+    category () {
+      return this.$store.state.category
     }
   }
 }
