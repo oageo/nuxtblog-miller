@@ -78,11 +78,16 @@
 let ytvid
 let license
 export default {
+  computed: {
+    category () {
+      return this.$store.state.category
+    }
+  },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
-    const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(100).fetch()
-    return { articles, prev, next, categories }
+    // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(100).fetch()
+    return { articles, prev, next }
   },
   data () {
     return {
@@ -111,11 +116,6 @@ export default {
       ],
       title: this.articles.title,
       titleTemplate: '%s'
-    }
-  },
-  computed: {
-    category () {
-      return this.$store.state.category
     }
   }
 }
