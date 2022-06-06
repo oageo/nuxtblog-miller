@@ -55,7 +55,7 @@
           <p>
             Category
           </p>
-          <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t">
+          <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
             {{ t.text }}
           </nuxt-link>
         </div>
