@@ -55,9 +55,16 @@
           <p>
             Category
           </p>
-          <nuxt-link v-for="(t,index) in categories.slug" :key="'category-'+index" class="" :to="'/category/'+t.slug">
-            {{ t.text }}
-          </nuxt-link>
+          <div v-if="articles.category !== ''">
+            <nuxt-link v-for="(t,index) in articles.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
+              {{ t.text }}
+            </nuxt-link>
+          </div>
+          <div v-else>
+            <p>
+              None
+            </p>
+          </div>
         </div>
         <div v-if="articles.license !== ''">
           <millerlicense :license="articles.license" />
