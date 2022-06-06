@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>
+    <p class="m-4">
       カテゴリ: {{ this.$route.params.slug }}が含まれている記事は{{ count }}件見つかりました。
     </p>
     <div v-for="a in content" :key="a.date" class="m-4">
@@ -22,7 +22,7 @@ export default {
     const count = await $content({ deep: true }).only('title','category').where({ category: { $contains: params.slug } }).fetch()
 
     const content = await $content({ deep: true })
-      .only(['title', 'description', 'thumbnail', 'path', 'category', 'tag', 'updatedAt', 'series', 'index'])
+      .only(['title', 'description', 'date', 'slug', 'thumbnail', 'path', 'category', 'tag', 'updatedAt', 'series', 'index'])
       .sortBy('date', 'desc')
       .where({ category: { $contains: params.slug } })
       .skip(0).limit(100)
@@ -30,7 +30,13 @@ export default {
 
     return {
       content,
-      count: count.length
+      count: count.length,
+      params
+    }
+  },
+  head () {
+    return {
+      title: this.$route.params.slug
     }
   }
 }
