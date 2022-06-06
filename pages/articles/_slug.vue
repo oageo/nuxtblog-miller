@@ -55,7 +55,7 @@
           <p>
             Category
           </p>
-          <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
+          <nuxt-link v-for="(t,index) in categories.slug" :key="'category-'+index" class="" :to="'/category/'+t.slug">
             {{ t.text }}
           </nuxt-link>
         </div>
@@ -68,16 +68,14 @@
 </template>
 
 <script>
-import millerlicense from '~/components/millerlicense.vue'
 let ytvid
 let license
 export default {
-  components: { millerlicense },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
-    // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
-    return { articles, prev, next }
+    const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(100).fetch()
+    return { articles, prev, next, categories }
   },
   data () {
     return {
