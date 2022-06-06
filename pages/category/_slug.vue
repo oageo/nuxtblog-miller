@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="m-4">
-      カテゴリ: {{ this.$route.params.slug }}が含まれている記事は{{ count }}件見つかりました。
+      カテゴリ: {{ $route.params.slug }}が含まれている記事は{{ count }}件見つかりました。
     </p>
     <div v-for="a in content" :key="a.date" class="m-4">
       <nuxt-link :to="'../articles/'+ a.slug">
@@ -19,7 +19,7 @@
 <script>
 export default {
   async asyncData ({ store, $content, params }) {
-    const count = await $content({ deep: true }).only('title','category').where({ category: { $contains: params.slug } }).fetch()
+    const count = await $content({ deep: true }).only('title', 'category').where({ category: { $contains: params.slug } }).fetch()
 
     const content = await $content({ deep: true })
       .only(['title', 'description', 'date', 'slug', 'thumbnail', 'path', 'category', 'tag', 'updatedAt', 'series', 'index'])

@@ -56,7 +56,7 @@
             Category
           </p>
           <div v-if="articles.category !== ''">
-            <nuxt-link v-for="(t,index) in this.$store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
+            <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
               {{ t.text }}
             </nuxt-link>
           </div>
@@ -78,11 +78,6 @@
 let ytvid
 let license
 export default {
-  computed: {
-    category () {
-      return this.$store.state.category
-    }
-  },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
@@ -116,6 +111,11 @@ export default {
       ],
       title: this.articles.title,
       titleTemplate: '%s'
+    }
+  },
+  computed: {
+    category () {
+      return this.$store.state.category
     }
   }
 }

@@ -15,16 +15,6 @@ export default {
         hid: 'description',
         name: 'description',
         content: 'This description can be changed at nuxt.config.js'
-      },
-      {
-        hid: 'og:title',
-        property: 'og:title',
-        content: this.title
-      },
-      {
-        hid: 'og:description',
-        property: 'og:description',
-        content: this.description
       }
     ],
     link: [
