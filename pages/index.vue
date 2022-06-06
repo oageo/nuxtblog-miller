@@ -3,9 +3,9 @@
     <div v-for="a in articles" :key="a.date" class="m-4">
       <nuxt-link :to="'/articles/'+ a.slug">
         <div>
-          <h1 class="title">
+          <h2 class="title">
             {{ a.title }}
-          </h1>
+          </h2>
           <p class="subtitle">
             {{ a.date }}
           </p>

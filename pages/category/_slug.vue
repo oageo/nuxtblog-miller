@@ -1,6 +1,18 @@
 <template>
   <div>
-    <div v-for="a in articles" :key="a.date" class="m-4" />
+    <p>
+      カテゴリ: {{ this.$route.params.id }}が含まれている記事は{{ count }}件見つかりました。
+    </p>
+    <div v-for="a in content" :key="a.date" class="m-4">
+      <nuxt-link :to="'../articles/'+ a.slug">
+        <h2 class="title">
+          {{ a.title }}
+        </h2>
+        <p class="subtitle">
+          {{ a.date }}
+        </p>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -13,7 +25,7 @@ export default {
       .only(['title', 'description', 'thumbnail', 'path', 'category', 'tag', 'updatedAt', 'series', 'index'])
       .sortBy('date', 'desc')
       .where({ category: { $contains: params.slug } })
-      .skip(0).limit(store.state.indexPerPage)
+      .skip(0).limit(100)
       .fetch()
 
     return {
