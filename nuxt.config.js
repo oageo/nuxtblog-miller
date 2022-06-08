@@ -11,7 +11,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'This description can be changed at nuxt.config.js'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -35,6 +39,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     '@aceforth/nuxt-optimized-images',
+    'nuxt-purgecss',
     '@nuxtjs/pwa'
   ],
   optimizedImages: {
@@ -47,7 +52,6 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content'
-    //'nuxt-purgecss'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -60,7 +64,10 @@ export default {
         target: '_self'
       },
       remarkPlugins: [
-        'remark-math'
+        'remark-math',
+        'remark-autolink-headings', {
+          behavior: 'after'
+        }
       ],
       rehypePlugins: [
         'rehype-mathjax'
