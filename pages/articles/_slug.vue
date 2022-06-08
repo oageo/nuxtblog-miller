@@ -56,8 +56,11 @@
             Category
           </p>
           <div v-if="articles.category !== ''">
-            <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
+            <!--  <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
               {{ t.text }}
+            </nuxt-link> -->
+            <nuxt-link v-for="(t,index) in articles.category" :key="'category-'+index" class="" :to="'/category/'+t">
+              {{ t }}
             </nuxt-link>
           </div>
           <div v-else>

@@ -66,7 +66,7 @@ export default {
       remarkPlugins: [
         'remark-math',
         'remark-autolink-headings', {
-          behavior: "append"
+          behavior: 'after'
         }
       ],
       rehypePlugins: [

@@ -38,6 +38,11 @@ export default {
     return {
       title: this.$route.params.slug
     }
+  },
+  computed: {
+    category () {
+      return this.$store.state.category
+    }
   }
 }
 </script>
