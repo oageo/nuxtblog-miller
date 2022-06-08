@@ -64,7 +64,10 @@ export default {
         target: '_self'
       },
       remarkPlugins: [
-        'remark-math'
+        'remark-math',
+        'remark-autolink-headings', {
+          behavior: "append"
+        }
       ],
       rehypePlugins: [
         'rehype-mathjax'

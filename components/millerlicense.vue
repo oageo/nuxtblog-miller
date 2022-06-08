@@ -1,5 +1,6 @@
 <template>
   <div loading="lazy" class="lazy block license">
+    <!-- CC0 1.0 -->
     <div v-if="license === 'cc010'" class="cc010">
       <p xmlns:dct="http://purl.org/dc/terms/">
         <a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/">
@@ -11,9 +12,11 @@
         with this work has waived all copyright and related or neighboring rights to this work.
       </p>
     </div>
+    <!-- CC BY 4.0 -->
     <div v-else-if="license === 'ccby40'" class="ccby40">
       <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
     </div>
+    <!-- CC BY-SA 4.0 -->
     <div v-else-if="license === 'ccbysa40'" class="ccby40">
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
     </div>
@@ -32,5 +35,7 @@ export default {
 </script>
 
 <style>
-
+a:hover {
+  color: hsl(219, 70%, 96%)
+}
 </style>
