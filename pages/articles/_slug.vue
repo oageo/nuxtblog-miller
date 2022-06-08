@@ -55,12 +55,22 @@
           <p>
             Category
           </p>
-          <nuxt-link class="" v-for="(t,index) in $store.state.category" :key="'category-'+index" :to="'/category/'+t">
-            
-          </nuxt-link>
+          <div v-if="articles.category !== ''">
+            <!--  <nuxt-link v-for="(t,index) in $store.state.category" :key="'category-'+index" class="" :to="'/category/'+t.slug">
+              {{ t.text }}
+            </nuxt-link> -->
+            <nuxt-link v-for="(t,index) in articles.category" :key="'category-'+index" class="" :to="'/category/'+t">
+              {{ t }}
+            </nuxt-link>
+          </div>
+          <div v-else>
+            <p>
+              None
+            </p>
+          </div>
         </div>
         <div v-if="articles.license !== ''">
-          <millerlicense :license="articles.license"></millerlicense>
+          <millerlicense :license="articles.license" />
         </div>
       </div>
     </main>
@@ -68,15 +78,13 @@
 </template>
 
 <script>
-import millerlicense from '~/components/millerlicense.vue'
 let ytvid
 let license
 export default {
-  components: { millerlicense },
   async asyncData ({ $content, params }) {
     const articles = await $content('articles', params.slug).fetch()
     const [prev, next] = await $content('articles').only(['title', 'slug']).sortBy('date', 'asc').surround(params.slug).fetch()
-    // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(1).fetch()
+    // const categories = await $content('category').only(['name', 'slug']).where({ name: { $containsAny: articles.category } }).limit(100).fetch()
     return { articles, prev, next }
   },
   data () {
@@ -106,6 +114,11 @@ export default {
       ],
       title: this.articles.title,
       titleTemplate: '%s'
+    }
+  },
+  computed: {
+    category () {
+      return this.$store.state.category
     }
   }
 }

@@ -3,7 +3,7 @@ title: パソコンを劇的に軽くする唯一の方法？ 彼女は？ 徹�
 description: 冗談抜きでやるべきではない
 date: 2022-01-23
 author: Osumi Akari
-category: [examplecategory1]
+category: [examplecategory1, examplecategory2]
 license: ccbysa40
 ---
 

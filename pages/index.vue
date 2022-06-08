@@ -3,9 +3,9 @@
     <div v-for="a in articles" :key="a.date" class="m-4">
       <nuxt-link :to="'/articles/'+ a.slug">
         <div>
-          <h1 class="title">
+          <h2 class="title">
             {{ a.title }}
-          </h1>
+          </h2>
           <p class="subtitle">
             {{ a.date }}
           </p>
@@ -18,7 +18,7 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    const query = await $content('articles' || 'index').sortBy('date', 'desc').limit(10)
+    const query = await $content('articles' || 'index').sortBy('date', 'desc').limit(20)
     const articles = await query.fetch()
     return { articles }
   },
@@ -31,5 +31,5 @@ export default {
 </script>
 
 <style>
-@import url(https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css);
+
 </style>
