@@ -34,7 +34,7 @@ export default defineNuxtConfig({
       params
     }
   },
-  head () {
+  meta () {
     return {
       title: this.$route.params.slug
     }

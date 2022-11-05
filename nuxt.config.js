@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
+  meta: {
     title: 'nuxtblog-miller',
     htmlAttrs: {
       lang: 'ja'
@@ -80,7 +80,7 @@ export default defineNuxtConfig({
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
+  extendWebpackConfig: {
     extractCSS: {
       ignoreOrder: true
     }

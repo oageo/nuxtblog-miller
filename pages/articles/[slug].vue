@@ -93,7 +93,7 @@ export default {
       license
     }
   },
-  head () {
+  meta () {
     return {
       meta: [
         {
