@@ -20,14 +20,14 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtConfig({
   props: {
     ytvid: {
       type: String,
       required: true
     }
   }
-}
+})
 </script>
 
 <style>

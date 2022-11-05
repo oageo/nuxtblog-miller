@@ -28,14 +28,14 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtConfig({
   props: {
     license: {
       type: String,
       required: true
     }
   }
-}
+})
 </script>
 
 <style>

@@ -13,7 +13,7 @@
     <main class="columns is-centered is-flex-wrap-wrap">
       <div class="column is-8 m-4">
         <div class="content">
-          <nuxt-content :document="articles" />
+          <ContentDoc />
         </div>
         <section class="columns box">
           <div v-if="prev" class="column">

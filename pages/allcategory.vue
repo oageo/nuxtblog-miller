@@ -12,11 +12,11 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtConfig({
   computed: {
     category () {
       return this.$store.state.category
     }
   }
-}
+})
 </script>

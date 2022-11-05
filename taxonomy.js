@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   category: [
     {
       text: 'カテゴリ例1',

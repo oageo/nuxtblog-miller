@@ -1,4 +1,4 @@
-export default {
+export default defineNuxtConfig({
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -89,4 +89,4 @@ export default {
   render: {
     injectScripts: false
   }
-}
+})

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtConfig({
   async asyncData ({ $content, params }) {
     const query = await $content('articles' || 'index').sortBy('date', 'desc').limit(20)
     const articles = await query.fetch()
@@ -27,7 +27,7 @@ export default {
       return this.articles.slice().reverse()
     }
   }
-}
+})
 </script>
 
 <style>

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-export default {
+export default defineNuxtConfig({
   async asyncData ({ store, $content, params }) {
     const count = await $content({ deep: true }).only('title', 'category').where({ category: { $contains: params.slug } }).fetch()
 
@@ -44,5 +44,5 @@ export default {
       return this.$store.state.category
     }
   }
-}
+})
 </script>
