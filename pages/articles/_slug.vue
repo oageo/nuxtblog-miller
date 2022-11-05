@@ -1,5 +1,5 @@
 <template>
-  <article class="has-background-dark has-text-white">
+  <div class="has-background-dark has-text-white">
     <section class="hero is-black">
       <div class="hero-body">
         <h1 class="title">
@@ -10,7 +10,7 @@
         </p>
       </div>
     </section>
-    <main class="columns is-centered flex-wrap">
+    <main class="columns is-centered is-flex-wrap-wrap">
       <div class="column is-8 m-4">
         <div class="content">
           <nuxt-content :document="articles" />
@@ -74,7 +74,7 @@
         </div>
       </div>
     </main>
-  </article>
+  </div>
 </template>
 
 <script>

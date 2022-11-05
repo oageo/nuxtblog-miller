@@ -10,12 +10,12 @@
       ytvid: {{ ytvid }}
       </li>
       <li>
-      Please access to <a :href="'https://www.youtube.com/watch?=' + ytvid">youtube.com</a>
+      Please access to <a :href="'https://www.youtube.com/watch?v=' + ytvid">youtube.com</a>
       </li>
       </ul>
       </div>
     </iframe>
-    <p>Direct link of <a :href="'https://www.youtube.com/watch?=' + ytvid">this video on YouTube</a></p>
+    <p>Direct link of <a :href="'https://www.youtube.com/watch?v=' + ytvid">this video on YouTube</a></p>
   </div>
 </template>
 
