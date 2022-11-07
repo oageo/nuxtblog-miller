@@ -1,26 +1,42 @@
-# nuxtblog-miller
-![GitHub](https://img.shields.io/github/license/Osumi-Akari/nuxtblog-miller)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Osumi-Akari/nuxtblog-miller)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Osumi-Akari/nuxtblog-miller)
+# Content v2 Minimal Starter
 
+Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
 
-Simple blog made with nuxt & bulma
+## Setup
 
-## Build Setup
+Make sure to install the dependencies:
 
-### 事前準備
-1. インターネット環境
-2. [Git](https://git-scm.com/)
-3. [nodejs](https://nodejs.org/)
-4. （任意）[yarn](https://yarnpkg.com/)
-
-### コマンドを実行
 ```bash
-git clone https://github.com/Osumi-Akari/nuxtblog-miller.git
-cd nuxt-miller
+# yarn
 yarn install
-yarn generate
+
+# npm
+npm install
+
+# pnpm
+pnpm install --shamefully-hoist
 ```
 
-distフォルダが生成されたことを確認
+## Development Server
 
+Start the development server on http://localhost:3000
+
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
