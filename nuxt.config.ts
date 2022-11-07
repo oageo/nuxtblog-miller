@@ -8,5 +8,9 @@ export default defineNuxtConfig({
   ],
   content: {
     // https://content.nuxtjs.org/api/configuration
+  },
+  ssr: false,
+  nitro: {
+    preset: 'service-worker'
   }
 })
