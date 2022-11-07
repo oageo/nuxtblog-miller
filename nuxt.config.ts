@@ -1,5 +1,8 @@
 import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
+  css: [
+    'bulma'
+  ],
   modules: [
     '@nuxt/content'
   ],
