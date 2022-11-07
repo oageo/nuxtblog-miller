@@ -1,6 +1,5 @@
 <template>
   <main>
-    <ContentDoc path="/articles">
-    </ContentDoc>
+    <ContentDoc></ContentDoc>
   </main>
 </template>
