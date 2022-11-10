@@ -3,6 +3,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "gen": "nuxi generate",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
