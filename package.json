@@ -12,5 +12,8 @@
     "bulma": "^0.9.4",
     "nuxt": "^3.0.0-rc.13",
     "sass": "^1.56.1"
+  },
+  "overrides": {
+    "@vueuse/head": "v1.0.0-rc.14"
   }
 }
