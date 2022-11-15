@@ -1,5 +1,5 @@
 <template>
-  <div class="has-background-grey-darker has-background-white">
+  <div class="has-background-grey-darker has-text-white">
     <main class="columns is-centered is-flex-wrap-wrap">
       <div class="column is-8 m-4">
         <div class="content">
@@ -23,8 +23,5 @@
 <style>
 .nuxt-content a {
   color: hsl(217, 71%, 60%)
-}
-.nuxt-content {
-  color: hsl(0, 0%, 100%);
 }
 </style>
