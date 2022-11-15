@@ -22,6 +22,9 @@
 
 <style>
 .nuxt-content a {
-  color: hsl(217, 71%, 60%)
+  color: hsl(217, 71%, 75%)
+}
+.nuxt-content a:hover {
+  color: hsl(219, 70%, 96%)
 }
 </style>
