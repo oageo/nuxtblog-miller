@@ -7,7 +7,14 @@
         </div>
       </div>
       <div class="column is-4 m-2">
-
+        <div class="box">
+          <p class="is-centered">
+            Writer
+          </p>
+          <p class="has-text-centered subtitle is-4">
+            <!-- {{ articles.author }} -->
+          </p>
+        </div>
       </div>
     </main>
   </div>
@@ -15,6 +22,9 @@
 
 <style>
 .nuxt-content a {
-color: hsl(217, 71%, 60%)
+  color: hsl(217, 71%, 60%)
+}
+.nuxt-content {
+  color: hsl(0, 0%, 100%);
 }
 </style>
