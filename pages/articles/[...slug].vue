@@ -21,10 +21,10 @@
 </template>
 
 <style>
-.nuxt-content a {
+.content a {
   color: hsl(217, 71%, 75%)
 }
-.nuxt-content a:hover {
+.content a:hover {
   color: hsl(219, 70%, 96%)
 }
 </style>
