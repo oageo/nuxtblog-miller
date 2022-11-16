@@ -35,6 +35,6 @@ const { articles } = await useAsyncData(`content-${path}`, () => {
   color: hsl(219, 70%, 96%)
 }
 .content strong h5 h6 {
-  color: hsl(219, 70%, 100%)
+  color: hsl(219, 70%, 100%) !important
 }
 </style>
