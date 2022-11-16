@@ -1,11 +1,18 @@
 <template>
   <div class="has-background-grey-darker has-text-white">
+    <section class="hero is-small has-background-black-bis">
+        <div class="hero-body">
+          <h1 class="title">
+            {{ articles }}
+          </h1>
+        </div>
+    </section>
     <main class="columns is-centered is-flex-wrap-wrap">
-      <div class="column is-8 m-4">
+      <section class="column is-8 m-4">
         <div class="content">
           <ContentDoc />
         </div>
-      </div>
+      </section>
       <div class="column is-3 m-2">
         <div class="box">
           <p class="is-centered">
@@ -21,9 +28,8 @@
 </template>
 
 <script setup>
-const { path } = useRoute()
-const { articles } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(`articles/`).where({_path: path}).findOne()
+const { articles } = await useAsyncData( () => {
+  return queryContent('articles').only('slug').find()
 })
 </script>
 
