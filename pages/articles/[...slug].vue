@@ -23,7 +23,7 @@
 <script setup>
 const { path } = useRoute()
 const { articles } = await useAsyncData(`content-${path}`, () => {
-  return queryContent(`articles`).where({_path: path}).findOne()
+  return queryContent(`articles/`).where({_path: path}).findOne()
 })
 </script>
 
