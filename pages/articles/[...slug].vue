@@ -12,7 +12,7 @@
             Writer
           </p>
           <p class="has-text-centered subtitle is-4">
-            {{ articles.author }}
+            {{ articles }}
           </p>
         </div>
       </div>
@@ -23,7 +23,7 @@
 <script setup>
 const { path } = useRoute()
 const { articles } = await useAsyncData(`content-${path}`, () => {
-  return queryContent().where({ _path: path }).findOne()
+  return queryContent(`articles`).where({_path: path}).findOne()
 })
 </script>
 
