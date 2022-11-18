@@ -8,9 +8,9 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.2.1",
+    "@nuxt/content": "^2.2.2",
     "bulma": "^0.9.4",
-    "nuxt": "^3.0.0-rc.13",
+    "nuxt": "^3.0.0",
     "sass": "^1.56.1"
   },
   "overrides": {
