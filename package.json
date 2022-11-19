@@ -14,6 +14,6 @@
     "sass": "^1.56.1"
   },
   "overrides": {
-    "@vueuse/head": "v1.0.0-rc.14"
+    "@vueuse/head": "v1.0.16"
   }
 }
