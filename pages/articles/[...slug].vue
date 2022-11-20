@@ -28,8 +28,10 @@
 </template>
 
 <script setup>
+const { path } = useRoute()
+
 const { articles } = await useAsyncData( () => {
-  return queryContent('articles').only('slug').find()
+  return queryContent('articles').where({ _path: path }).only(['title']).findOne()
 })
 </script>
 
