@@ -3,7 +3,7 @@
     <section class="hero is-small has-background-black-bis">
         <div class="hero-body">
           <h1 class="title">
-            
+            {{ articles }}
           </h1>
         </div>
     </section>
@@ -19,7 +19,7 @@
             Writer
           </p>
           <p class="has-text-centered subtitle is-4">
-            
+            {{ articles }}
           </p>
         </div>
       </div>
@@ -28,7 +28,11 @@
 </template>
 
 <script setup>
+const { path } = useRoute()
 
+const { articles } = await useAsyncData( () => {
+  return queryContent('articles').where({ _path: path }).only(['title']).findOne()
+})
 </script>
 
 <style>
