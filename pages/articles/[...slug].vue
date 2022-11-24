@@ -28,7 +28,9 @@
 </template>
 
 <script setup>
-const { info } = await useAsyncData('articles', () => queryContent('articles').where().findOne())
+const { info } = await useAsyncData('articles', () =>
+  queryContent('articles').where().findOne()
+)
 </script>
 
 <style>
