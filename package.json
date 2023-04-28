@@ -8,13 +8,10 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.2.2",
+    "@nuxt/content": "^2.6.0",
     "bulma": "^0.9.4",
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.4.0",
     "nuxt-purgecss": "^2.0.0",
-    "sass": "^1.56.1"
-  },
-  "overrides": {
-    "@vueuse/head": "v1.0.16"
+    "sass": "^1.62.1"
   }
 }
