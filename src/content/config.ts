@@ -8,6 +8,7 @@ const articles = defineCollection({
 		// Transform string to Date object
 		date: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
+		license: z.coerce.license(),
 		heroImage: z.string().optional(),
 	}),
 });
