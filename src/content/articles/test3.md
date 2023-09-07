@@ -19,7 +19,7 @@ millerytタグを用いてYouTubeの動画IDを以下のように指定すると
 <milleryt ytvid="PR7Rua0qFp0"></milleryt>
 ```
 
-<milleryt ytvid="PR7Rua0qFp0"></milleryt>
+<Milleryt ytvid="PR7Rua0qFp0" />
 
 ## カテゴリ機能
 Markdown上部に`category`を入力する場所がありますが、そこに`taxonomy.js`で設定したslugを入力することで、記事にカテゴリを設定することができます。`articles/_slug.vue`で表示される各記事に表示される他、そこからのリンクで同じカテゴリに属する他の記事を閲覧できる上、[カテゴリ一覧ページ](/allcategory)から全てのカテゴリを閲覧することも可能です。
