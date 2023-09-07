@@ -15,6 +15,9 @@
     "@astrojs/mdx": "^1.0.2",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
-    "astro": "^3.0.10"
+    "astro": "^3.0.10",
+    "bulma": "^0.9.4",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2"
   }
 }
