@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Articles from '../../layouts/Articles.astro';
+import Milleryt from '../components/Milleryt.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('articles');
