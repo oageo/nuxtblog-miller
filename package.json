@@ -1,7 +1,7 @@
 {
   "name": "nuxtblog-miller",
   "author": "Osumi Akari",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": "true",
   "license": "MIT",
   "scripts": {
@@ -12,8 +12,8 @@
     "gen": "nuxt generate",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js",
-    "lintfix": "yarn lint:js --fix"
+    "lint": "pnpm lint:js",
+    "lintfix": "pnpm lint:js --fix"
   },
   "dependencies": {
     "@babel/core": "^7.24.7",
