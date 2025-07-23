@@ -1,0 +1,25 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title }}</title>
+    <description>{{ site.description }}</description>
+    <link>{{ site.url }}</link>
+    <language>ja-JP</language>
+    <lastBuildDate>{{ "now" | rssDate }}</lastBuildDate>
+    <generator>Eleventy</generator>
+{%- for article in collections.articles %}
+    <item>
+      <title>{{ article.data.title | escape }}</title>
+      <description>{{ article.data.description | escape }}</description>
+      <link>{{ site.url }}{{ article.url }}</link>
+      <guid>{{ site.url }}{{ article.url }}</guid>
+      <pubDate>{{ article.data.date | rssDate }}</pubDate>
+      <author>{{ article.data.author | escape }}</author>
+    </item>
+{%- endfor %}
+  </channel>
+</rss>

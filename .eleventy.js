@@ -23,6 +23,14 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-MM-dd');
   });
 
+  // RSS用の日付フォーマット
+  eleventyConfig.addFilter("rssDate", (dateObj) => {
+    if (dateObj === "now") {
+      dateObj = new Date();
+    }
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('ccc, dd LLL yyyy HH:mm:ss') + ' +0000';
+  });
+
   // ナビゲーション用フィルター
   eleventyConfig.addFilter("getPreviousCollectionItem", function(collection, page) {
     const currentIndex = collection.findIndex(item => item.url === page.url);
@@ -47,7 +55,7 @@ module.exports = function(eleventyConfig) {
   // 記事をソートするコレクション（日付降順）
   eleventyConfig.addCollection("articles", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/articles/*.md").sort((a, b) => {
-      return b.date - a.date;
+      return new Date(b.data.date) - new Date(a.data.date);
     });
   });
 
