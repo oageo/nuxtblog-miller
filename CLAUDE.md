@@ -8,56 +8,66 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Development Commands
 
-This is a Nuxt 2 blog application using pnpm as the package manager:
+This is an 11ty (Eleventy) blog application using pnpm as the package manager:
 
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm generate` - Generate static site (main deployment method)
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint on .js and .vue files
+- `pnpm dev` - Start development server with `eleventy --serve` (http://localhost:8080)
+- `pnpm build` - Build static site with `eleventy`  
+- `pnpm generate` - Same as build, generates static site to `_site/` folder
+- `pnpm start` - Start development server (same as dev)
+- `pnpm lint` - Run ESLint on .js and .njk files
 - `pnpm lintfix` - Auto-fix ESLint issues
 
 ## Architecture Overview
 
 ### Core Framework
-- **Nuxt 2** (static site generation mode) with Vue.js
-- **Bulma CSS** for styling
-- **@nuxt/content** for markdown-based blog content
-- **Vuex store** for state management
+- **11ty (Eleventy)** static site generator with Nunjucks templating
+- **Bulma CSS** for styling (via node_modules passthrough copy)
+- **Markdown-it** with MathJax3 plugin for content processing
+- **Luxon** for date formatting
 
 ### Content System
-- Blog articles stored in `content/articles/` as markdown files
+- Blog articles stored in `src/articles/` as markdown files
 - Articles support frontmatter with title, description, date, author, category, license fields
-- Categories defined in `taxonomy.js` and managed through Vuex store
+- Categories defined in `src/_data/taxonomy.js` and accessed via Eleventy data cascade
 - Content rendering supports math equations (MathJax) and external links
+- Custom collections for article sorting and category grouping
 
-### Page Structure
-- `pages/index.vue` - Homepage listing recent articles (sorted by date, descending)
-- `pages/articles/_slug.vue` - Dynamic article pages with navigation between articles
-- `pages/category/_slug.vue` - Category listing pages
-- `pages/allcategory.vue` - All categories overview
+### Directory Structure
+- `src/` - Source files (input directory)
+- `src/_includes/` - Nunjucks templates (layouts and components)
+- `src/_data/` - Global data files including taxonomy
+- `src/articles/` - Markdown blog articles
+- `src/assets/` - Static assets and JavaScript components
+- `_site/` - Generated output directory
 
-### Components
-- `millermenu.vue` - Top navigation bar
-- `millerfooter.vue` - Site footer
-- `millerlicense.vue` - License display component
-- `milleryt.vue` - YouTube embed component
+### Templates and Components
+- `src/_includes/base.njk` - Main layout template
+- `src/_includes/navigation.njk` - Top navigation
+- `src/_includes/footer.njk` - Site footer  
+- `src/_includes/license.njk` - License display
+- `src/assets/milleryt-component.js` - YouTube embed Web Component
+- `src/index.njk` - Homepage template
+- `src/category.njk` - Category listing template with pagination
 
-### Key Configuration
-- Static site generation configured in `nuxt.config.js`
-- Image optimization enabled via `@aceforth/nuxt-optimized-images`
-- PWA support configured but icons disabled
-- CSS extraction enabled for production builds
-- Japanese language default (`lang: 'ja'`)
+### Key Configuration (.eleventy.js)
+- Markdown-it with MathJax3 for math equation rendering
+- Custom filters for date formatting (Japanese locale) and navigation
+- Collections for articles and category-based grouping
+- Passthrough copy for assets, Bulma CSS, and MathJax
+- Transform to convert `<milleryt>` tags to Web Component format
 
-### Content Management
-- Categories managed centrally in `taxonomy.js`
-- Store (`store/index.js`) provides getters for category lookups
-- Article metadata includes creation/update timestamps
-- Support for article series navigation (prev/next)
+### Content Management  
+- Categories defined in `src/_data/taxonomy.js` with text/slug pairs
+- Article collections auto-sorted by date (descending)
+- Previous/next navigation between articles
+- Category-based article filtering and pagination
+- File modification timestamps for last-updated dates
 
 ## Important Notes
-- This project uses the legacy Nuxt 2 framework (no longer supported)
-- Primary deployment method is static generation (`pnpm generate`) to `dist/` folder
+- This project has been **migrated from Nuxt 2 to 11ty (Eleventy)**
+- Primary deployment method is static generation (`pnpm generate`) to `_site/` folder
 - Uses pnpm for package management - ensure pnpm commands are used consistently
 - Dark theme styling throughout with Bulma CSS classes
+- Development server runs on http://localhost:8080 (not 3000 like Nuxt)
+- Web Components are used instead of Vue components (e.g., `<miller-yt>`)
+- Nunjucks templating instead of Vue template syntax
