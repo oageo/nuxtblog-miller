@@ -1,0 +1,28 @@
+---
+layout: base.njk
+pagination:
+    data: collections.articlesByCategory
+    size: 1
+    alias: categoryData
+permalink: "/category/{{ categoryData[0] }}/"
+eleventyComputed:
+    title: "Category: {{ categoryData[0] }}"
+---
+
+<div>
+    <p class="m-4">
+        カテゴリ: {{ categoryData[0] }}が含まれている記事は{{ categoryData[1].length }}件見つかりました。
+    </p>
+    {% for article in categoryData[1] | sort(false, false, 'date') | reverse %}
+        <div class="m-4">
+            <a href="{{ article.url }}">
+                <h2 class="title">
+                    {{ article.data.title }}
+                </h2>
+                <p class="subtitle">
+                    {{ article.date | readableDate }}
+                </p>
+            </a>
+        </div>
+    {% endfor %}
+</div>

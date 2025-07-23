@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title or site.title or "nuxtblog-miller" }}</title>
+    <meta name="description" content="{{ description or site.description or 'This description can be changed at nuxt.config.js' }}">
+    <meta property="og:title" content="{{ title or site.title or 'nuxtblog-miller' }}">
+    <meta property="og:description" content="{{ description or site.description or 'This description can be changed at nuxt.config.js' }}">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/bulma.min.css">
+    <script id="MathJax-script" async src="/mathjax/tex-mml-chtml.js"></script>
+    <script type="module" src="/assets/milleryt-component.js"></script>
+</head>
+<body>
+    {% include "navigation.njk" %}
+    
+    {{ content | safe }}
+    
+    {% include "footer.njk" %}
+</body>
+</html>

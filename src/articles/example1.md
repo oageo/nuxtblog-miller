@@ -1,4 +1,5 @@
 ---
+layout: article.njk
 title: パソコンを劇的に軽くする唯一の方法？ 彼女は？ 徹底調査してみた!
 description: 冗談抜きでやるべきではない
 date: 2022-01-23

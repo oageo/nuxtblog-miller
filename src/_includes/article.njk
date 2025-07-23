@@ -1,0 +1,104 @@
+---
+layout: base.njk
+---
+
+<div class="has-background-dark has-text-white">
+    <section class="hero is-black">
+        <div class="hero-body">
+            <h1 class="title">
+                {{ title }}
+            </h1>
+            <p class="subtitle">
+                {{ description }} / {{ date | readableDate }}
+            </p>
+        </div>
+    </section>
+    <main class="columns is-centered is-flex-wrap-wrap">
+        <div class="column is-8 m-4">
+            <div class="content">
+                {{ content | safe }}
+            </div>
+            <section class="columns box">
+                {% if collections.articles %}
+                    {% set prevPost = collections.articles | getNextCollectionItem(page) %}
+                    {% if prevPost %}
+                        <div class="column">
+                            <p>
+                                前の記事
+                            </p>
+                            <a href="{{ prevPost.url }}" class="page-nav__link">
+                                {{ prevPost.data.title }}
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% if collections.articles %}
+                    {% set nextPost = collections.articles | getPreviousCollectionItem(page) %}
+                    {% if nextPost %}
+                        <div class="column">
+                            <p>
+                                次の記事
+                            </p>
+                            <a href="{{ nextPost.url }}" class="page-nav__link">
+                                {{ nextPost.data.title }}
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </section>
+        </div>
+        <div class="column is-3 m-2">
+            <div class="box">
+                <p class="is-centered">
+                    Writer
+                </p>
+                <p class="has-text-centered subtitle is-4">
+                    {{ author }}
+                </p>
+            </div>
+            <div class="box">
+                <p>
+                    Created: {{ page.date | readableDate }}
+                </p>
+                <p>
+                    Last Updated: {{ page.inputPath | lastModified | readableDate }}
+                </p>
+            </div>
+            <div class="box">
+                <p>
+                    Category
+                </p>
+                {% if category %}
+                    <div>
+                        {% for cat in category %}
+                            <a href="/category/{{ cat }}/" class="">
+                                {% for taxCat in taxonomy.category %}{% if taxCat.slug == cat %}{{ taxCat.text }}{% endif %}{% endfor %}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div>
+                        <p>
+                            None
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+            {% if license %}
+                {% include "license.njk" %}
+            {% endif %}
+        </div>
+    </main>
+</div>
+
+<style>
+.nuxt-content h2, .nuxt-content h3, .nuxt-content h4, .nuxt-content h5, .nuxt-content h6, .nuxt-content strong{
+    color: #ffffff;
+}
+.nuxt-content a:hover {
+    color: hsl(219, 70%, 96%)
+}
+.nuxt-content img{
+    max-width: 100%;
+}
+</style>

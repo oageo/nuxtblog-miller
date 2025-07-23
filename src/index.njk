@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: nuxtblog-miller
+---
+
+<div>
+    {% for article in collections.articles %}
+        <div class="m-4">
+            <a href="{{ article.url }}">
+                <div>
+                    <h2 class="title">
+                        {{ article.data.title }}
+                    </h2>
+                    <p class="subtitle">
+                        {{ article.date | readableDate }}
+                    </p>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>

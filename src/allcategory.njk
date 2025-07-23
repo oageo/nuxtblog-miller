@@ -1,0 +1,21 @@
+---
+layout: base.njk
+title: カテゴリ一覧
+---
+
+<section class="section">
+    <div class="container">
+        <div class="m-4">
+            <h1 class="title">
+                カテゴリ一覧
+            </h1>
+            <section class="buttons">
+                {% for category in taxonomy.category %}
+                    <a class="column is-3 button is-medium is-link has-text-centered" href="/category/{{ category.slug }}/">
+                        {{ category.text }}
+                    </a>
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+</section>
