@@ -79,6 +79,15 @@ module.exports = function(eleventyConfig) {
   // static フォルダの内容をルート直下にコピー（Nuxt2と同じ動作）
   eleventyConfig.addPassthroughCopy({"static/": "."});
 
+  // millerytタグをmiller-ytに変換するトランスフォーム
+  eleventyConfig.addTransform("milleryt-transform", function(content, outputPath) {
+    if (outputPath && outputPath.endsWith(".html")) {
+      // <milleryt>を<miller-yt>に、</milleryt>を</miller-yt>に変換
+      return content.replace(/<milleryt/g, '<miller-yt').replace(/<\/milleryt>/g, '</miller-yt>');
+    }
+    return content;
+  });
+
   // Nunjucksテンプレートエンジンの設定
   eleventyConfig.setTemplateFormats(["md", "njk", "html"]);
 

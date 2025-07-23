@@ -1,11 +1,8 @@
 class MillerYT extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
-
     connectedCallback() {
+        console.log('MillerYT WebComponent connected');
         const ytvid = this.getAttribute('ytvid');
+        console.log('ytvid:', ytvid);
         if (!ytvid) {
             this.renderError('ytvid attribute is required');
             return;
@@ -15,16 +12,9 @@ class MillerYT extends HTMLElement {
     }
 
     render(ytvid) {
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
             <div class="lazy block is-centered videoyt milleryt">
-                <iframe src="https://youtube.com/embed/${ytvid}" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-                    <div class="milleryterror">
-                        <p>milleryt.vue: something broken.</p>
-                        <ul>
-                            <li>ytvid: ${ytvid}</li>
-                            <li>Please access to <a href="https://www.youtube.com/watch?v=${ytvid}">youtube.com</a></li>
-                        </ul>
-                    </div>
+                <iframe src="https://youtube.com/embed/${ytvid}" loading="lazy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width: 100%; height: 315px;">
                 </iframe>
                 <p>Direct link of <a href="https://www.youtube.com/watch?v=${ytvid}">this video on YouTube</a></p>
             </div>
@@ -32,7 +22,7 @@ class MillerYT extends HTMLElement {
     }
 
     renderError(message) {
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
             <div class="error">
                 <p><strong>Error:</strong> ${message}</p>
             </div>
@@ -40,4 +30,6 @@ class MillerYT extends HTMLElement {
     }
 }
 
-customElements.define('milleryt', MillerYT);
+console.log('Defining miller-yt WebComponent');
+customElements.define('miller-yt', MillerYT);
+console.log('miller-yt WebComponent defined');
