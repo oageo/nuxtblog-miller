@@ -1,7 +1,7 @@
 # nuxtblog-miller
-![GitHub](https://img.shields.io/github/license/Osumi-Akari/nuxtblog-miller)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Osumi-Akari/nuxtblog-miller)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Osumi-Akari/nuxtblog-miller)
+![GitHub](https://img.shields.io/github/license/oageo/nuxtblog-miller)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/oageo/nuxtblog-miller)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/oageo/nuxtblog-miller)
 
 Simple blog made with 11ty (Eleventy) & bulma
 
@@ -107,6 +107,8 @@ _site/            # ビルド出力（.gitignoreに追加）
 4. **記事ファイル**：
    - `content/articles/*.md` → `src/articles/*.md`
    - frontmatterは基本的にそのまま使用可能
+
+`git mv`などを活用することで、Gitログの肥大を軽減することが可能です。
 
 ### 3. 設定ファイルの移行
 
