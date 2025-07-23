@@ -33,15 +33,6 @@ class MillerYT extends HTMLElement {
 
     renderError(message) {
         this.shadowRoot.innerHTML = `
-            <style>
-                .error {
-                    background: #ffebee;
-                    color: #c62828;
-                    padding: 1rem;
-                    border-radius: 4px;
-                    border-left: 4px solid #c62828;
-                }
-            </style>
             <div class="error">
                 <p><strong>Error:</strong> ${message}</p>
             </div>

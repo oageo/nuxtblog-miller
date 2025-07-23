@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "bulma": "^0.9.4",
+    "bulma": "^1.0.4",
     "luxon": "^3.4.4",
     "markdown-it": "^14.0.0",
     "markdown-it-mathjax3": "^4.3.2",
