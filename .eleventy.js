@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const markdownIt = require("markdown-it");
 const markdownItMathjax = require("markdown-it-mathjax3");
 const fs = require("fs");
+const purgeCssPlugin = require("eleventy-plugin-purgecss");
 
 module.exports = function(eleventyConfig) {
   // Markdown設定
@@ -94,6 +95,15 @@ module.exports = function(eleventyConfig) {
       return content.replace(/<milleryt/g, '<miller-yt').replace(/<\/milleryt>/g, '</miller-yt>');
     }
     return content;
+  });
+
+  // PurgeCSSプラグインの設定
+  eleventyConfig.addPlugin(purgeCssPlugin, {
+    // Optional: Specify the location of your PurgeCSS config
+    config: "./purgecss.config.js",
+
+    // Optional: Set quiet: true to suppress terminal output
+    quiet: false,
   });
 
   // Nunjucksテンプレートエンジンの設定
