@@ -1,7 +1,7 @@
 {
   "name": "eleventyblog-miller",
   "author": "Osumi Akari",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": "true",
   "license": "MIT",
   "scripts": {
@@ -9,20 +9,20 @@
     "build": "eleventy",
     "start": "eleventy --serve",
     "generate": "eleventy",
-    "lint:js": "eslint --ext \".js,.njk\" --ignore-path .gitignore .",
+    "lint:js": "eslint .",
     "lint": "pnpm lint:js",
     "lintfix": "pnpm lint:js --fix"
   },
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.1.2",
     "bulma": "^1.0.4",
     "eleventy-plugin-purgecss": "^0.5.0",
-    "luxon": "^3.4.4",
-    "markdown-it": "^14.0.0",
+    "luxon": "^3.7.2",
+    "markdown-it": "^14.1.1",
     "markdown-it-mathjax3": "^4.3.2",
-    "mathjax": "^3.2.2"
+    "mathjax": "^4.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0"
+    "eslint": "^10.0.0"
   }
 }
