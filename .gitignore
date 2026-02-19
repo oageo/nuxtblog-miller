@@ -94,3 +94,6 @@ sw.*
 
 ## PWA
 sw.*
+
+## Claude Code
+.claude
