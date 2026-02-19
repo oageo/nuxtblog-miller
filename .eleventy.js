@@ -82,7 +82,7 @@ module.exports = function(eleventyConfig) {
 
   // 静的ファイルのコピー  
   eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy({"node_modules/mathjax/es5": "mathjax"});
+  eleventyConfig.addPassthroughCopy({"node_modules/mathjax/tex-mml-chtml.js": "mathjax/tex-mml-chtml.js"});
   eleventyConfig.addPassthroughCopy({"node_modules/bulma/css": "css"});
   
   // static フォルダの内容をルート直下にコピー（Nuxt2と同じ動作）
